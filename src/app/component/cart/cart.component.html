@@ -1,0 +1,37 @@
+<div>
+    <!-- <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="cart.length != 0"><mat-icon>shopping_cart</mat-icon></button>-->
+     <!--<mat-menu yPosition="above" #menu="matMenu" [overlapTrigger]="false" class="item-container">-->
+       <button class="btn btn-info request-btn" (click)="openDialog()">Solicitar</button>
+       <div class="item-container" *ngFor="let item of cart">
+         <mat-card>
+           <mat-card-header>
+             <mat-card-title>{{item.product.category.name}} {{item.product.name}}</mat-card-title>
+             <mat-card-subtitle>
+               <span>Cantidad:</span>
+               <div class="btn-amount-cart">
+                 <button type="button" class="btn btn-default btn1" (click)="item.subOne()">-</button>
+                 <input type="text" class="btn btn-default amount" value="{{item.amount}}" readonly>
+                 <button type="button" class="btn btn-default btn2" (click)="item.addOne()">+</button>
+               </div>
+             </mat-card-subtitle>
+           </mat-card-header>
+           <mat-card-content>
+             <div class="horizontal">
+               <label class="upload-design">
+                 <input type="file" accept=".jpg,.png" hidden #fileImput placeholder="Cargar diseño" (change)="readUrl($event, item)">
+                 <span class="upload-design btn btn-info">Cargar diseño</span>
+               </label>
+               <button class="btn btn-info" (click)="openPreview()">Vista previa</button>
+               <!-- <button class="btn btn-info" (click)="openPreview(item.design)">Vista previa</button> -->
+               <button mat-icon-button color="warn" (click)="deleteItem(item)"><mat-icon>remove_circle</mat-icon></button>
+             </div>
+             <!-- <div class="preview horizontal">
+               <span>Vista previa:</span>
+               <img src="{{item.design}}" >
+             </div> -->
+           </mat-card-content>
+           </mat-card>
+         </div>
+     <!--</mat-menu>-->
+   </div>
+   

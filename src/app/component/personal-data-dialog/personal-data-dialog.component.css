@@ -1,0 +1,9 @@
+.cdk-overlay-panel{
+    width: 470px
+  }
+  
+  .button-bar{
+    display: flex;
+    overflow: inherit
+  }
+  

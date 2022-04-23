@@ -1,0 +1,27 @@
+<h2>Ingresa tus datos personales.</h2>
+<div class="example-container" style="width: 60%">
+<form #personData (submit)="onClickSubmit($event)">
+  <mat-form-field>
+    <input required matInput placeholder="Nombre" name="firstName" [(ngModel)]="person.firstName">
+  </mat-form-field>
+  <mat-form-field>
+    <input required matInput placeholder="Apellido" name="secondName" [(ngModel)]="person.lastName">
+  </mat-form-field>
+  <mat-form-field>
+    <input required matInput placeholder="CUIT" name="cuit" [(ngModel)]="person.cuit">
+  </mat-form-field>
+  <mat-form-field>
+    <input required matInput placeholder="EMail" name="email" [(ngModel)]="person.email">
+  </mat-form-field>
+  <mat-form-field>
+    <input required matInput [matDatepicker]="picker" placeholder="Fecha de nacimiento" name="birthdate" [(ngModel)]="person.birthdate">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <div class="button-bar">
+    <input type = "submit" value = "Solicitar" class="btn btn-primary">
+    <button class="btn btn-danger">Cancelar</button>
+  </div>
+</form>
+</div>

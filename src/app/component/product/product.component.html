@@ -1,0 +1,27 @@
+<div>
+    <mat-card *ngFor="let product of products" class="material-card">
+      <mat-card-header>
+        <mat-card-title>
+          <label>{{product.product.name}}</label>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Alto: {{product.product.height}}</p>
+        <p>Ancho: {{product.product.width}}</p>
+      </mat-card-content>
+  
+      <span class="item-right">
+      <div class="btn_amount_content">
+        <div class="btn-amount-cart" role="group">
+          <button type="button" class="btn btn-default btn1" (click)="product.subOne()">-</button>
+          <input type="text" class="btn btn-default amount" value="{{product.amount}}" readonly>
+          <button type="button" class="btn btn-default btn2" (click)="product.addOne()">+</button>
+        </div>
+        <div>
+          <button type="button" class="btn btn-info" (click)="addItem(product);">Añadir al carrito</button>
+        </div>
+      </div>
+      </span>
+    </mat-card>
+  </div>
+  

@@ -1,5 +1,4 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import { MaterialModule } from '../material/material.module';
 
 @Component({
   selector: 'app-home',

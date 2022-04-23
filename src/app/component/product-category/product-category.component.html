@@ -1,0 +1,10 @@
+<mat-nav-list appAccordion class="navigation">
+    <mat-list-item appAccordionLink *ngFor="let item of productCategories" class="list-group">
+      <a appAccordionToggle class="relative" [routerLink]="['/home']"
+         [queryParams]="{id: item.id}">
+        <span>{{item.name}}</span>
+        <span fxFlex></span>
+      </a>
+    </mat-list-item>
+  </mat-nav-list>
+  
