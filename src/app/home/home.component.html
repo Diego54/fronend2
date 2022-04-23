@@ -1,0 +1,26 @@
+<div class="full-height">
+    <mat-toolbar class="main-header" color="primary">
+      <mat-toolbar-row class="toolbar-content">
+        <div>
+          <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+          <h1 class="branding">Indigo Gráfica</h1>
+        </div>
+        <div>
+          <button mat-icon-button (click)="snav2.toggle()"><mat-icon>shopping_cart</mat-icon></button>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-sidenav-container class="app-inner full-height">
+      <mat-sidenav #snav mode="side" opened="false">
+        <app-sidebar-navigation></app-sidebar-navigation>
+      </mat-sidenav>
+      <mat-sidenav #snav2 align="end" mode="side" opened="false">
+        <app-cart></app-cart>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+  
+  
